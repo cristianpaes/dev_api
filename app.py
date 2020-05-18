@@ -16,6 +16,7 @@ desenvolvedores = [
     }
 ]
 
+# Devolve um desenvolvedor pelo ID, também altera e deleta um desenvolvedor
 @app.route('/dev/<int:id>', methods=['GET','PUT','DELETE'])
 def desenvolvedor(id):
      if request.method == 'GET':
@@ -47,6 +48,8 @@ def lista_desenvolvedores():
         return jsonify(desenvolvedores[posicao])
     elif request.method == 'GET':
         return jsonify(desenvolvedores)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
